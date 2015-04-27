@@ -1,0 +1,166 @@
+<div class="pages">
+    <div data-page="createb"  class="page navbar-fixed toolbar-fixed create">
+          <div class="navbar">
+
+            <div class="navbar-inner">
+
+                <div class="left">
+                    <a href="#" class="back link text-navbar">
+                        <i class="icon icon-back color-white"></i>
+                    </a>
+                </div>
+
+                <div class="center create">
+                    <p>
+                        选择参会方
+                        <br/>                
+                        <small>创建即时会议</small>
+                    </p>
+                </div>
+
+                <div class="right">
+                    <a href="#" id="btn-create-done" class="link">完成</a>
+                </div>
+            </div>
+        </div>      
+          <!-- Search bar -->          
+          <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar">
+              <div class="searchbar-input">
+                  <input type="search" placeholder="Search">          
+                  <a href="#" class="searchbar-clear"></a>
+              </div>
+              <a href="#" class="searchbar-cancel">Cancel</a>
+          </form>
+
+          <!-- Search bar overlay -->          
+          <div class="searchbar-overlay"></div>
+          <div class="nameBar">
+                    <ul>
+                        <ol>
+                            <a href="#">a</a>
+                        </ol>
+                        <ol>
+                            <a href="#">b</a>
+                        </ol>
+                        <ol>
+                            <a href="#">c</a>
+                        </ol>
+                        <ol>
+                            <a href="#">d</a>
+                        </ol>
+                        <ol>
+                            <a href="#">e</a>
+                        </ol>
+                        <ol>
+                            <a href="#">f</a>
+                        </ol>
+                        <ol>
+                            <a href="#">g</a>
+                        </ol>
+                        <ol>
+                            <a href="#">h</a>
+                        </ol>
+                        <ol>
+                            <a href="#">i</a>
+                        </ol>
+                        <ol>
+                            <a href="#">j</a>
+                        </ol>
+                        <ol>
+                            <a href="#">k</a>
+                        </ol>
+                        <ol>
+                            <a href="#">l</a>
+                        </ol>
+                        <ol>
+                            <a href="#">m</a>
+                        </ol>
+                        <ol>
+                            <a href="#">n</a>
+                        </ol>
+                        <ol>
+                            <a href="#">o</a>
+                        </ol>
+                        <ol>
+                            <a href="#">p</a>
+                        </ol>
+                        <ol>
+                            <a href="#">q</a>
+                        </ol>
+                        <ol>
+                            <a href="#">r</a>
+                        </ol>
+                        <ol>
+                            <a href="#">s</a>
+                        </ol>
+                        <ol>
+                            <a href="#">t</a>
+                        </ol>
+                        <ol>
+                            <a href="#">u</a>
+                        </ol>
+                        <ol>
+                            <a href="#">v</a>
+                        </ol>
+                        <ol>
+                            <a href="#">w</a>
+                        </ol>
+                        <ol>
+                            <a href="#">x</a>
+                        </ol>
+                        <ol>
+                            <a href="#">y</a>
+                        </ol>
+                        <ol>
+                            <a href="#">z</a>
+                        </ol>
+                    </ul>
+                </div>
+        <div class="page-content">
+            <!-- This block will be displayed if nothing found -->
+            <div class="content-block searchbar-not-found">
+              <div class="content-block-inner">Nothing found</div>
+            </div>
+            <!-- <div class="list-block">
+                <ul>
+                    <li>
+                        <a href="#" id="select-create-time" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title">最近参会方</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+            <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+            <div id="contacts-content" class="list-block contacts-content contacts-block list-block-search searchbar-found">
+                <div class="list-group top">
+                    <ul>
+                        <li class="list-group-title">我经常选择的</li>
+                        {{{topContacts}}}
+                    </ul>
+                </div>
+                <div class="list-group all">
+                    <ul>
+                        <li class="list-group-title">全部</li>
+                        {{{contacts}}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- toolbar start -->        
+        <div class="toolbar">
+            <div class="row">
+                <div id="btn-show-selected" class="col-20 block-left">
+                    <span id="badge-create-users" class="badge">{{count}}</span>
+                </div>
+                <div id="btn-create-add-user" class="col-80 btn-add">
+                    <a href="#" class="link">
+                        <i class="glyph-icon glyph-plus"></i> &nbsp; 添加参会方
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- toolbar end -->
+    </div>
+</div>

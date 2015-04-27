@@ -1,0 +1,146 @@
+.page-login{
+  &.page {
+    background:url("@{imgBaseUrl}/em_bg.png") no-repeat;
+    background-size: 100%;
+  }
+  .page-content{
+    background: none;
+  }
+  .content-block{
+    margin:0 ;
+    padding:35px 15px;
+    height: 100%;
+    padding-top:15%;
+    box-sizing: border-box;
+  }
+  .list-block{
+    background:none;
+    border:none;
+  }
+  .subline{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    left: 0;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    color: #eee;
+
+    > a {
+      display: inline-block;
+      color: #eee;
+    }
+  } 
+  .auto-login{
+    margin-right: 15px;
+    //display: block;
+    //color: #FFF;
+
+    > i{
+      //font-size: 18px;
+      opacity:0.4;
+    }
+
+    > span{
+      vertical-align: middle;
+    }
+  }
+  &.auto{
+    .auto-login {
+      > i {opacity:1;}
+    }
+  }
+
+  .login-input-content{
+
+    margin: 5% 15px;
+    //margin-top: 5vh;
+
+    .list-block {
+
+      //margin-bottom: 0;
+
+      input {
+        border: 1px solid #dfdfdf;
+        background-color: #fff;
+
+        background-repeat: no-repeat;
+        background-position: 98% 9px;
+        background-size: 20px;
+        color: #666;
+        //padding: 0 5px 0 40px;
+        border-radius: 3px;
+      }
+
+      /*.login-name {
+         background-image: url("@{imgBaseUrl}/user.png");
+      }
+
+      .password {
+        background-image: url("@{imgBaseUrl}/password.png");
+      }*/
+    }
+  }
+
+  .login-btn-content{
+    margin-top:15%;
+    //margin-top: 10vh;
+    //margin-bottom: 20px;
+    .login-submit {
+      border-color: #fff;
+      //background-color: #ff9630;
+      width: 70%;
+      margin:0 auto;
+    }
+
+    .login-submit:active {
+      background-color: rgba(255, 150, 48, 0.8) !important;
+    }
+  }
+  #login-user-list{
+    background-color: #F7F7F7;
+    position: absolute;
+    pointer-events:auto;
+    z-index: 1000;
+  }
+}
+
+.views {
+  .logo {
+    width: 50%;
+    height: 30%;
+    //width: 50vmin;
+    //height: 30vh;
+    background: url("@{imgBaseUrl}/em_logo.png") center no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    margin: 0 auto;
+  }
+  .copyright {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    left: 0;
+    //top: -20px;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    color: #eee;
+
+    > a {
+      display: inline-block;
+      color: #eee;
+    }
+  }
+}
+@media screen and (orientation:landscape) {
+.page-login {
+  .content-block{
+    padding-top: 5%;
+  }
+  .login-btn-content{
+    margin-top: 5px;
+  }
+  }
+}

@@ -1,0 +1,141 @@
+/* FONT AWESOME CORE
+ * -------------------------- */
+@classPrefix:    glyph-;
+@borderColor:    #eee;
+@iconMuted:      #eee;
+@iconLight:      #fff;
+@iconDark:       #333;
+@icons-li-width: 30/14em;
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// [class^="@{classPrefix}"],
+// [class*=" @{classPrefix}"] {
+//   .@{classPrefix}FontAwesome();
+// }
+
+// [class^="@{classPrefix}"]:before,
+// [class*=" @{classPrefix}"]:before {
+//   text-decoration: inherit;
+//   display: inline-block;
+//   speak: none;
+// }
+
+/* makes the font 33% larger relative to the icon container */
+.@{classPrefix}large:before {
+  vertical-align: -10%;
+  font-size: 4/3em;
+}
+
+/* makes sure icons active on rollover in links */
+a {
+  [class^="@{classPrefix}"],
+  [class*=" @{classPrefix}"] {
+    display: inline;
+  }
+}
+
+/* increased font size for @{classPrefix}large */
+[class^="@{classPrefix}"],
+[class*=" @{classPrefix}"] {
+  &.@{classPrefix}fixed-width {
+    display: inline-block;
+    width: 16/14em;
+    text-align: right;
+    padding-right: 4/14em;
+    &.@{classPrefix}large {
+      width: 20/14em;
+    }
+  }
+}
+
+.icons-ul {
+  margin-left: @icons-li-width;
+  list-style-type: none;
+
+  > li { position: relative; }
+
+  .@{classPrefix}li {
+    position: absolute;
+    left: -@icons-li-width;
+    width: @icons-li-width;
+    text-align: center;
+    line-height: inherit;
+  }
+}
+
+// allows usage of the hide class directly on font awesome icons
+[class^="@{classPrefix}"],
+[class*=" @{classPrefix}"] {
+  &.hide {
+    display: none;
+  }
+}
+
+.@{classPrefix}muted { color: @iconMuted; }
+.@{classPrefix}light { color: @iconLight; }
+.@{classPrefix}dark { color: @iconDark; }
+
+// Icon Borders
+// -------------------------
+
+.@{classPrefix}border {
+  border: solid 1px @borderColor;
+  padding: .2em .25em .15em;
+  .border-radius(3px);
+}
+
+// Icon Sizes
+// -------------------------
+
+.@{classPrefix}2x {
+  font-size: 2em;
+  &.@{classPrefix}border {
+    border-width: 2px;
+    .border-radius(4px);
+  }
+}
+.@{classPrefix}3x {
+  font-size: 3em;
+  &.@{classPrefix}border {
+    border-width: 3px;
+    .border-radius(5px);
+  }
+}
+.@{classPrefix}4x {
+  font-size: 4em;
+  &.@{classPrefix}border {
+    border-width: 4px;
+    .border-radius(6px);
+  }
+}
+
+.@{classPrefix}5x {
+  font-size: 5em;
+  &.@{classPrefix}border {
+    border-width: 5px;
+    .border-radius(7px);
+  }
+}
+
+
+// Floats & Margins
+// -------------------------
+
+// Quick floats
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+[class^="@{classPrefix}"],
+[class*=" @{classPrefix}"] {
+  &.pull-left {
+    margin-right: .3em;
+  }
+  &.pull-right {
+    margin-left: .3em;
+  }
+}

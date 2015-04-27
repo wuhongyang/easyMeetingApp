@@ -1,0 +1,41 @@
+.navbar{
+  background:url("@{imgBaseUrl}/em_bg.png") no-repeat;
+  background-size: 100%;
+  border-bottom: none;
+  color:#fff;
+  i{
+    &.icon {
+      font-size: 25px;
+    }
+
+    &.ios7-compose-outline {
+      font-size: 30px;
+    }
+
+    &.ios7-arrow-thin-left {
+      font-size: 32px;
+    }
+
+  }
+
+  a{
+    &.link {
+      color: #fff;
+    }
+    &.back{
+      min-width: 2em;
+    }
+  }
+
+  a,
+  div{
+    &.link:active{
+      opacity: 1;
+      color: @mainColor
+    }
+  }
+
+  .text-navbar {
+    font-size: 15px;
+  }
+}

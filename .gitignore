@@ -1,0 +1,7 @@
+node_modules/
+bower_components/
+temp/
+dist/
+.DS_Store
+ant-build/
+.idea

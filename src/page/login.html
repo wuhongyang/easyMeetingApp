@@ -1,0 +1,36 @@
+<div class="pages">
+  <div data-page="login" class="page page-login no-swipeback">
+    
+    <div class="page-content ">
+
+      <div class="content-block">
+        <div class="logo">{{appName}}</div>
+        <div id="login-input-content" class="login-input-content">
+          <div class="list-block">
+            <div class="item-input">
+				<input type="text" id="login-name" class="login-name" name="username" value="" placeholder="{{loginnamePlaceholder}}">
+			</div>
+            <ul id="login-user-list">
+            </ul>
+          </div>
+          <div class="list-block">
+            <div class="item-input"><input type="password" id="password" name="password" class="password" value="" placeholder="{{passwordPlaceholder}}"></div>
+          </div>
+        </div>
+        <div class="login-btn-content">
+            <a href="#" class="button button-big button-submit login-submit color-white">{{loginBtn}}</a>
+        </div>
+        <div class="subline">
+          <!-- <a href="javascript:">{{signUp}}</a>&nbsp;&nbsp;|&nbsp; -->
+            <a id="btn-auto-login" class="auto-login" href="#"> <i class="glyph-icon glyph-checked"></i>
+              <span>{{autoLogin}}</span>
+            </a>
+            <a id="btn-forgot-password" href="page/forget.html"> <i class="glyph-icon glyph-forgot"></i>
+              <span>{{forgotPwd}}</span>
+            </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,97 @@
+{
+    "success": true,
+    "msg": "查询成功！",
+    "data": {
+        "tenantContacts": [{
+            "id": "001",
+            "name": "010",
+            "address":"ssss"
+        }, {
+            "id": "002",
+            "name": "01a",
+            "address":"ssss"
+        }, {
+            "id": "003",
+            "name": "01b",
+            "address":"ssss"
+        }, {
+            "id": "004",
+            "name": "01c",
+            "address":"ssss"
+        }, {
+            "id": "005",
+            "name": "01d",
+            "address":"ssss"
+        }],
+        "personalContacts": [{
+            "id": "006",
+            "name": "000",
+            "address":"ssss"
+        }, {
+            "id": "007",
+            "name": "阿要",
+            "address":"ssss"
+        }, {
+            "id": "008",
+            "name": "有木有",
+            "address":"ssss"
+        }, {
+            "id": "009",
+            "name": "有感",
+            "address":"ssss"
+        }, {
+            "id": "010",
+            "name": "演唱会",
+            "address":"ssss"
+        }, {
+            "id": "011",
+            "name": "广州",
+            "address":"ssss"
+        }, {
+            "id": "012",
+            "name": "008",
+            "address":"ssss"
+        }, {
+            "id": "013",
+            "name": "举行",
+            "address":"ssss"
+        },{
+            "id": "014",
+            "name": "01bb",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        },{
+            "id": "015",
+            "name": "01bbn",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        },{
+            "id": "016",
+            "name": "01bbn民",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        }],
+        "topContacts": [{
+            "id": "002",
+            "name": "01a",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        },{
+            "id": "014",
+            "name": "01bb",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        },{
+            "id": "015",
+            "name": "01bbn",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        },{
+            "id": "016",
+            "name": "01bbn民",
+            "address": "终端地址",
+            "times": "最近一个月联系次数"
+        }]
+
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "msg": "登录成功！",
+    "data": {
+            "id": "10001",
+            "email": "hiapp@gmail.com",
+            "name": "HiApp",
+            "points": "267",
+            "avatarUrl": "style/img/avatar/avatar01.jpg",
+            "gender": "m",
+            "location": "China"
+    }
+}

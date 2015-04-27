@@ -1,0 +1,475 @@
+
+<script id="loginUserListTemplate" type="text/template">
+        {{#userList}}
+            <li data-id="{{.}}">
+                <label class = "item-content">
+                    <div class = "item-inner">
+                        <div class = "item-title"> {{.}} </div>
+                    </div >
+                </label>
+            </li >
+        {{/userList}}
+</script>
+
+<script id="addUserTemplate" type="text/template">
+    <div class="popup {{name}}">
+        <div class="view navbar-fixed">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                    <div class="left"><a href="#" class="link close-popup"><i class="glyph-icon glyph-2x glyph-basics-close"></i></a></div>
+                        <div class="center">{{title}}</div>
+                        <div class="right"><a href="#" class="link done"><i class="glyph-icon glyph-2x glyph-basics-checkmark"></i></a></div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <form id='form-add-meeting-user'>
+
+                    <div class="content-block-title">名称</div>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input name="name" type="text" placeholder="名称" {{#username}}value="{{username}}"{{/username}}>
+                                      </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-block-title">号码</div>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input name="email" type="email" placeholder="E-mail" {{#email}}value="{{email}}"{{/email}}>
+                                      </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="createShowSelectedTemplate" type="text/template">
+    <div class="popup popup-show-selected">
+        <div class="view navbar-fixed">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                    <div class="left"><a href="#" class="link close-popup"><i class="glyph-icon glyph-2x glyph-basics-close"></i></a></div>
+                        <div class="center">已选（{{count}}）</div>
+                        <div class="right"><a href="#" class="link done"><i class="glyph-icon glyph-2x glyph-basics-checkmark"></i></a></div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="list-block media-list">
+                        <ul>
+                        {{#selected}}
+                            <li data-id="{{id}}" class="{{firstLetter}}">
+                                <label class="label-checkbox item-content">
+                                    <input type="checkbox" data-type="{{type}}" data-id="{{id}}" name="user-checkbox" value="{{name}}" {{#checked}} checked = true {{/checked}}>                    
+                                    <div class="item-media">
+                                        <i class="icon icon-form-checkbox"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">{{name}}</div>
+                                        </div>
+                                        {{#subname}}
+                                        <div class="item-subtitle">{{subname}}</div>
+                                        {{/subname}}
+                                    </div>
+                                </label>
+                            </li>
+                        {{/selected}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="historyMeetingDetailTemplate" type="text/template">
+    <div class="popup popup-history-meeting-detail">
+        <div class="view navbar-fixed">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                    <div class="left"><a href="#" class="link close-popup"><i class="glyph-icon glyph-2x glyph-basics-close"></i></a></div>
+                        <div class="center"></div>
+                        <!--<div class="right">
+                            <a href="#" class="link star">
+                                <i class="glyph-icon glyph-2x glyph-basics-checkmark"></i>
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="meetingTitle">
+                        <h3><input  id="newMeetingTitle" type="text" class="restart-title" value="{{title}}" /></h3>
+                        <div class="subTitle">会议时间 {{time}}</div>
+                    </div>
+                    <div class="meetingInfo">
+                        <label>参会方：</label>
+                        <div class="users">
+                            {{#users}}
+                            <p>
+                            {{.}}
+                            </p>
+                            {{/users}}
+                            {{^users}}
+                            <p class="none">
+                            无参会人员
+                            </p>
+                            {{/users}}
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <a href="#" class="link createMeeting">
+                        重新发起会议
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="sendPopupTemplate" type="text/template">
+    <div class="send-popup popup">
+        <div class="view navbar-fixed">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"><a href="#" class="link close-popup">{{cancel}}</a></div>
+                        <div class="center">{{senTweet}}</div>
+                        <div class="right"><a id="sendWeiboBtn" href="#" class="link orange">{{send}}</a></div>
+                    </div>
+                </div>
+                <div class="page-content message-content">
+
+                    <div class="message-input">
+                        <textarea id="messageText" placeholder="{{sendPlaceholder}}"></textarea>
+                    </div>
+
+                    <div class="message-tools">
+                        <ul>
+                            <li class="camera image-upload">
+                                <i class="icon ios7-camera-outline"></i>
+                            </li>
+                            <li class="photoalbum image-upload">
+                                <i class="icon ios7-pic"></i>
+                            </li>
+                            <li><i class="icon ios7-emotion"></i></li>
+                            <li><i class="icon ios7-at-outline"></i></li>
+                            <li class="get-position"><i class="icon ios7-dingxiang"></i></li>
+                        </ul>
+                    </div>
+
+                    <div id="geoInfo" class="geo-info">
+                        <div class="location"><i class="icon preloader"></i><span class="info">{{loadingGeo}}</span></div>
+                        <div class="close"><i class="icon ios7-close"></i></div>
+                    </div>
+
+                    <div id="uploadPicPreview" class="upload-pic-preview">
+                        <img src="" alt="" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="settingTemplate" type="text/template">
+    <div class="page-content">
+        <div class="setting-page list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner user-info">
+                            <div class="avatar">
+                                <img src="{{avatarUrl}}" alt="">
+                            </div>
+                            <div class="user-detail">
+                                <div class="name">{{i18nNickName}}: {{nickName}}</div>
+                                <div class="point">{{i18nPoints}}: {{points}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="page/feedback.html" class="item-link">
+                        <div class="item-content">
+                            <div class="item-media feedback spring"></div>
+                            <div class="item-inner">
+                                <div class="item-title">{{feedBack}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="update-button item-link">
+                        <div class="item-content">
+                            <div class="item-media update spring"></div>
+                            <div class="item-inner">
+                                <div class="item-title">{{checkUpdate}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page/language.html?from=setting" class="item-link">
+                        <div class="item-content">
+                            <div class="item-media language">
+                                <i class="icon ios7-world-outline"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">{{language}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page/about.html" class="item-link">
+                        <div class="item-content">
+                            <div class="item-media about spring"></div>
+                            <div class="item-inner">
+                                <div class="item-title">{{about}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" class="button button-big button-cancel logout-button  color-white">{{loginOut}}</a>
+        </div>
+    </div>
+</script>
+
+<script id="contactListTemplate" type="text/template">
+    {{#contacts}}
+    {{#header}}
+    <li class="list-group-title">{{header}}</li>
+    {{/header}}
+     <li data-id="{{id}}" class="{{firstLetter}}">
+        <label class="label-checkbox item-content">
+            <input type="checkbox" name="user-checkbox" data-type="{{type}}" data-id="{{id}}" value="{{name}}" {{#checked}} checked = true {{/checked}}>                    
+            <div class="item-media">
+                <i class="icon icon-form-checkbox"></i>
+            </div>
+             <div class="item-inner">
+              <div class="item-title-row">
+                 <div class="item-title">{{name}}</div>
+                 <div class="item-text">{{address}}</div> 
+              </div>             
+            </div>
+        </label>       
+    </li>
+    {{/contacts}}
+</script>
+<script id="historyGoingTemplate" type="text/template">
+    <ul>
+        <li class="list-group-title">
+            正在进行
+        </li>
+        {{#meeting}}
+        <li class="swipeout item" data-type="going" data-id="{{id}}">
+            <div class="swipeout-content item-content">
+                <div class="item-inner">
+                    <div class="item-title-row">
+                        <div class="item-title">{{title}}</div>
+                    </div>
+                    <div class="item-subtitle">{{count}} 人参加</div>
+                    
+                </div>
+                <div class="item-after">{{startTime}}</div>
+            </div>
+            <div class="swipeout-actions">
+                <div class="swipeout-actions-inner">
+                    <a href="#" class="swipeout-delete">结束会议</a>
+                </div>
+            </div>
+        </li>
+        {{/meeting}}
+        {{^meeting}}
+            <li class="info">
+                <div class="item-content">
+                    <div class="item-inner">
+                        没有正在进行的会议。
+                    </div>
+                </div>
+            </li>
+        {{/meeting}}
+    </ul>
+</script>
+
+<script id="historyAllTemplate" type="text/template">
+    {{#meeting}}
+    <li class="item" data-type="all" data-id="{{id}}">
+        <div class="item-content">
+            <div class="item-inner">
+                <div class="item-title-row">
+                    <div class="item-title">{{title}}</div>
+                </div>
+                <div class="item-subtitle">{{userCount}} 人参加</div>
+                
+            </div>
+            <div class="item-after">{{time}}</div>
+        </div>
+    </li>
+    {{/meeting}}
+    {{^meeting}}
+        <li class="info">
+            <div class="item-content">
+                <div class="item-inner">
+                    没有正在进行的会议。
+                </div>
+            </div>
+        </li>
+    {{/meeting}}
+</script>
+<script id="meetingUserListTemplate" type="text/template">
+    {{#meetingCtrlStore}}
+    <li>
+        <div class="item-content connected" data-id={{id}}>
+           
+            <div class="item-media">
+                <i name="{{userIn}}" class="glyph-icon glyph-2x {{userImg}} "></i></div>
+            <div class="item-inner">
+                <div class="item-title-row">
+                    <div class="item-title"> {{name}}</div>
+                    <div class="item-after" name="deal" style="color:{{colors}}" data-id="{{address}}">{{deal}}</div>
+                </div>
+                <div class="item-subtitle">
+                <span><i class="glyph-icon {{muteImg}}" name="mute"></i></span>
+                <span><i class="glyph-icon {{camaraImg}}" name="mute"></i></span>
+                <span class="status-text">{{statusText}}</span>
+                </div>
+            </div>
+            
+        </div>
+       
+    </li>
+     {{/meetingCtrlStore}}
+</script>
+
+<script id="messageTemplate" type="text/template">
+    {{#message}}
+    {{#date}}
+    <div class="messages-date">{{date}}</div>
+    {{/date}}
+    {{#image}}
+    <div class="message message-{{from}} message-pic ">
+        <div class="message-text"><img src="{{&text}}"/></div>
+    </div>
+    {{/image}}
+    {{^image}}
+    <div class="message message-{{from}} message-last">
+        <div class="message-text">{{text}}</div>
+    </div>
+    {{/image}}
+    {{/message}}
+</script>
+<script id="myContactsItemTemplate" type="text/template">
+    {{#data}}
+    {{#id}}
+    <li class="swipeout" data-id="{{id}}">
+    {{/id}}
+    {{#name}}
+        <div class="swipeout-content item-content">
+            <div class="item-inner">
+                <div class="item-title-row">
+                 <div class="item-title">{{name}}</div>
+                 <div class="item-text">{{address}}</div> 
+              </div>
+            </div>
+        </div>
+        <div class="swipeout-actions mc-actions mc-actions-default">
+            <div class="swipeout-actions-inner">
+                <a href="#" class="action1">编辑</a>
+                <a href="#" class="swipeout-delete" data-confirm="要删除“{{name}}”吗?" data-confirm-title=" ">删除</a>
+            </div>
+        </div>
+    {{/name}}
+    </li>
+    {{/data}}
+</script>
+<script id="splitScreenTemplate" type="text/template">
+    <div class="popover my-popover meeting-ctrl-popover">
+          <div class="popover-inner">
+          <div class="row">
+            <div class='col-25'>
+                    <a href="#" name="1" class="link splitScreen screenMode1"><i class="glyph-icon glyph-2x glyph-meetingmodel1"></i>
+                         <p>模式1</p>
+                    </a>
+                   
+            </div>
+            <div class='col-25'>
+                    <a href="#"  name="2" class="link splitScreen screenMode2"><i class="glyph-icon glyph-2x glyph-meetingmodel2 "></i>
+                      <p>模式2</p>
+                    </a>
+                    
+            </div>
+            <div class='col-25'>
+                    <a href="#" name="3" class="link splitScreen screenMode3"><i class="glyph-icon glyph-2x glyph-meetingmodel3"></i>
+                      <p>模式3</p>
+                    </a>
+                    
+            </div>
+            <div class='col-25'>
+                    <a href="#"  name="4" class="link splitScreen screenMode4"><i class="glyph-icon glyph-2x glyph-meetingmodel4"></i>
+                         <p>模式4</p>
+                    </a>
+                   
+            </div>
+          </div>
+            
+          </div>
+        </div>
+</script>
+<script id="userControlTemplate" type="text/template">
+     <div class="popup popup-user-control">
+        <div class="view navbar-fixed">
+            <div class="page page-usercontrol">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                    <div class="left"><a href="#" class="link close-popup"><i class="glyph-icon glyph-2x glyph-basics-close"></i></a></div>
+                        
+                    </div>
+                </div>
+                <div class="page-content">
+                        <div class="user-info-detail">
+                            <div class="user-img center"><a href="#"  class="link"><i class="glyph-icon glyph-2x {{userImg}}"></i></a></div>
+                            <div class="user-name center"><a href="#"  class="link white">{{name}}</a></div>
+                             <div class="user-ctrl center">
+                                 <div class="row">
+                                    <div class='col-33'>
+                                             <a href="#"  address="{{address}}" name="camera" flag="{{isCamera}}" class="userCtrl link"><i class="glyph-icon glyph-4x {{cameraImg}} white"></i></a>
+                                              <p id="camera">{{camera}}</p>
+                                    </div>
+                                     <div class='col-33'>
+                                                <a href="#"  address="{{address}}" name="mute" flag="{{isMute}}" class="userCtrl ink"><i class="glyph-icon glyph-4x {{muteImg}} white"></i></a>
+                                                <p id="mute">{{mute}}</p>
+                                    </div>
+                                     <div class='col-33'>
+                                                 <a href="#" address="{{address}}" name="other" flag="false" class="userCtrl link"><i class="glyph-icon glyph-4x glyph-meetingmutecircle white"></i></a>
+                                                 <p id="other">静音其他</p>
+                                    </div>
+                                 </div>                               
+                             </div>
+                              <div class="user-cut center">
+                                        <a href="#"  address="{{address}}" name="cut" flag="true" class="userCtrl link white"><i class="glyph-icon glyph-4x glyph-meetingphonecircle red"></i></a>
+                                        <p id="cut" class="white cursor">挂断</p>
+                                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,52 @@
+{
+  "meetingCtrlStore": [{
+        "id":"1002",
+         "userName": "滨江 18F小会议室",
+         "mute":false,
+         "camera":true,
+          "type":"0",
+         "status":"1"
+    }, {
+        "id":"1003",
+        "userName": "滨江 17F大会议室",
+        "mute":true,
+        "camera":true,
+         "type":"0",
+         "status":"1"
+    }, {
+        "id":"1004",
+        "userName": "北京 分部会议室",
+        "mute":true,
+        "camera":true,
+         "type":"0",
+         "status":"0"
+    },{
+        "id":"1005",
+        "userName": "吴丹",
+        "mute":true,
+        "camera":true,
+         "type":"1",
+         "status":"0"
+    },{
+        "id":"1006",
+        "userName": "王海涛",
+        "mute":false,
+        "camera":true,
+         "type":"1",
+         "status":"0"
+    },{
+        "id":"1007",
+        "userName": "黄大仙",
+        "mute":true,
+        "camera":true,
+         "type":"1",
+         "status":"0"
+    },{
+        "id":"1008",
+        "userName": "近平",
+        "mute":false,
+        "camera":true,
+         "type":"1",
+         "status":"0"
+    }]
+}

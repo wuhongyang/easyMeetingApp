@@ -1,0 +1,87 @@
+<div class="pages navbar-through">
+    <div data-page="history"  class="page page-history navbar-fixed">
+        <div class="navbar">
+
+            <div class="navbar-inner">
+
+                <div class="left">
+                    <a href="index.html" class="back link text-navbar"> <i class="icon icon-back color-white"></i>
+                    </a>
+                </div>
+
+                <div class="center sliding">我的会议</div>
+
+            </div>
+        </div>
+        <div class="page-content infinite-scroll infinite-scroll-page-history">
+            <div id="history-content" class="list-block media-list">
+                <!-- start 正在进行中的会议 -->
+                <!-- <div class="list-group going">
+                    <ul>
+                        <li class="list-group-title">
+                            正在进行
+                        </li>
+                        <li class="swipeout item" data-type="going">
+                            <div class="swipeout-content item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">Item title</div>
+                                    </div>
+                                    <div class="item-subtitle">
+                                        8人参加
+                                    </div>
+                                    
+                                </div>
+                                <div class="item-after">8-15 15:30</div>
+                            </div>
+                            <div class="swipeout-actions">
+                                <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipeout-delete">结束会议</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- end 正在进行中的会议 -->
+                <!-- start 收藏的会议 -->
+                <!-- <div class="list-group star">
+                    <ul>
+                        <li class="list-group-title">
+                            <i class="glyph-icon glyph-star"></i>
+                            收藏
+                        </li>
+                        <li class="swipeout item" data-type="star">
+                            <div class="swipeout-content item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">Item title</div>
+                                    </div>
+                                    <div class="item-subtitle">
+                                        8人参加
+                                    </div>
+                                    
+                                </div>
+                                <div class="item-after">8-15 15:30</div>
+                            </div>
+                            <div class="swipeout-actions">
+                                <div class="swipeout-actions-inner">
+                                    <a href="#" class="swipeout-delete">取消收藏</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- end 收藏的会议 -->
+                <!-- start 历史会议 -->
+                <div class="list-group all">
+                        {{{historyMeeting}}}
+                </div>
+                <!-- end 历史会议 -->
+            </div>
+            <!-- Preloader -->
+              <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+              </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+.page-history{
+	.glyph-star{
+		color:#f90; 
+	}
+	.item-content{
+		padding-right: 15px;
+		padding-left: 2px;
+		border-bottom : 1px solid #ccc;
+	}
+	li{
+		&.item{
+			margin-left: 15px;
+		}
+		&:last-child {
+			.item-content{
+				border-bottom: none;
+			}
+		}
+		&.info{
+			.item-inner{
+				color:#ccc;
+				font:0.6em/1 '';
+				text-align: center;
+			}
+		}
+	}
+	.item-inner{
+		border-bottom: none;
+	}
+	.item-after{
+		font: 0.8em/100% '';
+	}
+	.item-subtitle{
+		font:0.6em/2 '';
+	}
+}
+
+.popup-history-meeting-detail{
+	.toolbar{
+		a{
+			background-color: #E74C52;
+			text-align: center;
+			display: inherit;
+		}
+		
+	}
+	.meetingTitle{
+		.title{
+			margin-bottom: 0.6em;
+		}
+		.subTitle{
+			color: @gray;
+			font-size: 0.6em;
+			border-bottom: 1px solid @gray;
+			padding-bottom: 0.5em;
+		}
+		padding:0 0.6em;
+	}
+	.meetingInfo{
+		margin-top: 1em;
+		padding:0 0.6em;
+		label{
+			color:@gray;
+			font-size: 0.6em;
+		}
+		.none{
+			text-align: center;
+			color: @gray;
+		}
+	}
+	.restart-title{
+		border: none;
+		outline: medium;
+		background-color: transparent;
+	}
+	
+}
